@@ -6,419 +6,146 @@
     <title>Infografía: Evolución de los Paradigmas de Investigación</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f5f5f5; padding: 20px; }
         .infografia-container {
-            width: 1200px;
-            max-width: 100%;
-            margin: 0 auto;
+            width: 1200px; max-width: 100%; margin: 0 auto;
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden;
         }
-        
+
         /* Header */
         .header {
             background: linear-gradient(135deg, #1A237E 0%, #283593 50%, #3F51B5 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white; padding: 40px; text-align: center; position: relative; overflow: hidden;
         }
-        
         .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+            content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px;
+            background: rgba(255,255,255,0.05); border-radius: 50%;
         }
-        
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .header p {
-            font-size: 18px;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Timeline Container */
-        .timeline-wrapper {
-            padding: 60px 40px;
-            background: white;
-        }
-        
-        .timeline-intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .timeline-intro h2 {
-            color: #1A237E;
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .timeline-intro p {
-            color: #555;
-            font-size: 16px;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        /* Main Timeline */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-        
+        .header h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header p { font-size: 18px; opacity: 0.95; position: relative; z-index: 1; }
+
+        /* Timeline */
+        .timeline-wrapper { padding: 60px 40px; background: white; }
+        .timeline-intro { text-align: center; margin-bottom: 50px; }
+        .timeline-intro h2 { color: #1A237E; font-size: 28px; margin-bottom: 15px; font-weight: 700; }
+        .timeline-intro p { color: #555; font-size: 16px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+        .timeline { position: relative; padding: 20px 0; }
         .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #D32F2F, #0288D1, #7B1FA2);
+            content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+            width: 4px; height: 100%; background: linear-gradient(to bottom, #D32F2F, #0288D1, #7B1FA2);
         }
-        
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 0;
-            margin-right: 52%;
-            text-align: right;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 52%;
-            margin-right: 0;
-            text-align: left;
-        }
-        
+        .timeline-item { margin-bottom: 50px; position: relative; }
+        .timeline-item:nth-child(odd) .timeline-content { margin-left: 0; margin-right: 52%; text-align: right; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: 52%; margin-right: 0; text-align: left; }
         .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 4px solid;
-            border-radius: 50%;
-            z-index: 10;
+            position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+            width: 20px; height: 20px; background: white; border: 4px solid; border-radius: 50%; z-index: 10;
         }
-        
-        .timeline-item:nth-child(1) .timeline-dot {
-            border-color: #D32F2F;
-        }
-        
-        .timeline-item:nth-child(2) .timeline-dot {
-            border-color: #D32F2F;
-        }
-        
-        .timeline-item:nth-child(3) .timeline-dot {
-            border-color: #D32F2F;
-        }
-        
-        .timeline-item:nth-child(4) .timeline-dot {
-            border-color: #0288D1;
-        }
-        
-        .timeline-item:nth-child(5) .timeline-dot {
-            border-color: #0288D1;
-        }
-        
-        .timeline-item:nth-child(6) .timeline-dot {
-            border-color: #7B1FA2;
-        }
-        
-        .timeline-item:nth-child(7) .timeline-dot {
-            border-color: #7B1FA2;
-        }
-        
+        .timeline-item:nth-child(1) .timeline-dot,
+        .timeline-item:nth-child(2) .timeline-dot,
+        .timeline-item:nth-child(3) .timeline-dot { border-color: #D32F2F; }
+        .timeline-item:nth-child(4) .timeline-dot,
+        .timeline-item:nth-child(5) .timeline-dot { border-color: #0288D1; }
+        .timeline-item:nth-child(6) .timeline-dot,
+        .timeline-item:nth-child(7) .timeline-dot { border-color: #7B1FA2; }
+
         .timeline-content {
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px; background: white; border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid;
+            transition: transform .3s ease, box-shadow .3s ease;
         }
-        
-        .timeline-item:nth-child(1) .timeline-content,
-        .timeline-item:nth-child(2) .timeline-content,
-        .timeline-item:nth-child(3) .timeline-content {
-            border-left-color: #D32F2F;
-        }
-        
+        .timeline-item:nth-child(-n+3) .timeline-content { border-left-color: #D32F2F; }
         .timeline-item:nth-child(4) .timeline-content,
-        .timeline-item:nth-child(5) .timeline-content {
-            border-left-color: #0288D1;
-        }
-        
+        .timeline-item:nth-child(5) .timeline-content { border-left-color: #0288D1; }
         .timeline-item:nth-child(6) .timeline-content,
-        .timeline-item:nth-child(7) .timeline-content {
-            border-left-color: #7B1FA2;
-        }
-        
-        .timeline-year {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        
-        .timeline-item:nth-child(1) .timeline-year,
-        .timeline-item:nth-child(2) .timeline-year,
-        .timeline-item:nth-child(3) .timeline-year {
-            color: #D32F2F;
-        }
-        
+        .timeline-item:nth-child(7) .timeline-content { border-left-color: #7B1FA2; }
+
+        .timeline-year { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .timeline-item:nth-child(-n+3) .timeline-year { color: #D32F2F; }
         .timeline-item:nth-child(4) .timeline-year,
-        .timeline-item:nth-child(5) .timeline-year {
-            color: #0288D1;
-        }
-        
+        .timeline-item:nth-child(5) .timeline-year { color: #0288D1; }
         .timeline-item:nth-child(6) .timeline-year,
-        .timeline-item:nth-child(7) .timeline-year {
-            color: #7B1FA2;
-        }
-        
-        .timeline-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #1A237E;
-        }
-        
-        .timeline-description {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-keywords {
-            font-size: 12px;
-            color: #888;
-            font-style: italic;
-        }
-        
-        /* Streams Section */
-        .streams-section {
-            background: #F8F9FA;
-            padding: 60px 40px;
-        }
-        
-        .streams-title {
-            text-align: center;
-            color: #1A237E;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-        
-        .streams-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
+        .timeline-item:nth-child(7) .timeline-year { color: #7B1FA2; }
+
+        .timeline-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #1A237E; }
+        .timeline-description { font-size: 14px; color: #555; line-height: 1.5; margin-bottom: 10px; }
+        .timeline-keywords { font-size: 12px; color: #888; font-style: italic; }
+
+        /* Streams */
+        .streams-section { background: #F8F9FA; padding: 60px 40px; }
+        .streams-title { text-align: center; color: #1A237E; font-size: 28px; font-weight: 700; margin-bottom: 40px; }
+        .streams-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin-bottom: 40px; }
         .stream-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white; border-radius: 12px; padding: 30px; text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 6px solid;
+            transition: transform .3s ease, box-shadow .3s ease;
         }
-        
-        .stream-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        }
-        
-        .stream-card.positivist {
-            border-top-color: #D32F2F;
-        }
-        
-        .stream-card.interpretative {
-            border-top-color: #0288D1;
-        }
-        
-        .stream-card.critical {
-            border-top-color: #7B1FA2;
-        }
-        
-        .stream-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .stream-card.positivist .stream-icon {
-            color: #D32F2F;
-        }
-        
-        .stream-card.interpretative .stream-icon {
-            color: #0288D1;
-        }
-        
-        .stream-card.critical .stream-icon {
-            color: #7B1FA2;
-        }
-        
-        .stream-name {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1A237E;
-        }
-        
-        .stream-emphasis {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .stream-characteristics {
-            font-size: 12px;
-            color: #888;
-            font-style: italic;
-            line-height: 1.5;
-        }
-        
-        /* Comparison Table */
-        .comparison-section {
-            background: white;
-            padding: 60px 40px;
-        }
-        
-        .comparison-title {
-            text-align: center;
-            color: #1A237E;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-        
+        .stream-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .stream-card.positivist { border-top-color: #D32F2F; }
+        .stream-card.interpretative { border-top-color: #0288D1; }
+        .stream-card.critical { border-top-color: #7B1FA2; }
+        .stream-icon { font-size: 48px; margin-bottom: 15px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .stream-card.positivist .stream-icon { color: #D32F2F; }
+        .stream-card.interpretative .stream-icon { color: #0288D1; }
+        .stream-card.critical .stream-icon { color: #7B1FA2; }
+        .stream-name { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #1A237E; }
+        .stream-emphasis { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 15px; }
+        .stream-characteristics { font-size: 12px; color: #888; font-style: italic; line-height: 1.5; }
+
+        /* Tabla */
+        .comparison-section { background: white; padding: 60px 40px; }
+        .comparison-title { text-align: center; color: #1A237E; font-size: 28px; font-weight: 700; margin-bottom: 30px; }
         .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 100%; border-collapse: collapse; background: white;
+            border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        
-        .comparison-table thead {
-            background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
-            color: white;
-        }
-        
-        .comparison-table th {
-            padding: 16px;
-            text-align: left;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .comparison-table td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 13px;
-            color: #555;
-        }
-        
-        .comparison-table tbody tr:hover {
-            background: #f5f5f5;
-        }
-        
-        .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-        
+        .comparison-table thead { background: linear-gradient(135deg, #1A237E 0%, #283593 100%); color: white; }
+        .comparison-table th { padding: 16px; text-align: left; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .5px; }
+        .comparison-table td { padding: 14px 16px; border-bottom: 1px solid #e0e0e0; font-size: 13px; color: #555; }
+        .comparison-table tbody tr:hover { background: #f5f5f5; }
+        .comparison-table tbody tr:last-child td { border-bottom: none; }
+
         /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
-            color: white;
-            padding: 30px 40px;
-            text-align: center;
-            font-size: 12px;
-        }
-        
-        .footer p {
-            margin-bottom: 8px;
-        }
-        
-        .footer-source {
-            opacity: 0.8;
-            font-style: italic;
-        }
-        
-        /* Responsive */
+        .footer { background: linear-gradient(135deg, #1A237E 0%, #283593 100%); color: white; padding: 30px 40px; text-align: center; font-size: 12px; }
+        .footer p { margin-bottom: 8px; }
+        .footer-source { opacity: .8; font-style: italic; }
+
+        /* Responsive general */
         @media (max-width: 1024px) {
-            .infografia-container {
-                width: 100%;
-            }
-            
-            .streams-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
+            .infografia-container { width: 100%; }
+            .streams-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 30px; }
             .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 80px;
-                margin-right: 0;
-                text-align: left;
+            .timeline-item:nth-child(even) .timeline-content { margin-left: 80px; margin-right: 0; text-align: left; }
+            .timeline-dot { left: 30px; }
+        }
+
+        /* TABLA RESPONSIVA EN MÓVIL */
+        @media (max-width: 768px) {
+            .comparison-table, .comparison-table thead, .comparison-table tbody,
+            .comparison-table th, .comparison-table td, .comparison-table tr { display: block; }
+            .comparison-table thead tr { position: absolute; top: -9999px; left: -9999px; }
+            .comparison-table tr {
+                margin-bottom: 30px; border: 1px solid #ddd; border-radius: 10px;
+                overflow: hidden; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
-            
-            .timeline-dot {
-                left: 30px;
+            .comparison-table td {
+                border: none; border-bottom: 1px solid #eee; position: relative;
+                padding: 15px 15px 15px 50%; text-align: left;
             }
+            .comparison-table td:before {
+                content: attr(data-label) ": ";
+                position: absolute; left: 15px; width: 45%; font-weight: 700;
+                color: #1A237E; font-size: 13px; white-space: nowrap;
+            }
+            .comparison-table td:last-child { border-bottom: 0; }
+        }
+        @media (max-width: 480px) {
+            .comparison-table td { padding-left: 55%; }
+            .comparison-table td:before { font-size: 12.5px; }
         }
     </style>
 </head>
@@ -429,90 +156,24 @@
             <h1>Evolución de los Paradigmas de Investigación</h1>
             <p>Un recorrido histórico desde el siglo XIX hasta la actualidad</p>
         </div>
-        
-        <!-- Timeline Section -->
+
+        <!-- Timeline -->
         <div class="timeline-wrapper">
             <div class="timeline-intro">
                 <h2>Línea de Tiempo Histórica</h2>
                 <p>Descubre cómo han evolucionado los enfoques y metodologías de la investigación científica a lo largo de más de 150 años, desde el Positivismo Clásico hasta los Paradigmas Descoloniales contemporáneos.</p>
             </div>
-            
             <div class="timeline">
-                <!-- Positivism Items -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">1830 - 1840</div>
-                        <div class="timeline-title">Positivismo Clásico</div>
-                        <div class="timeline-description">Énfasis en la realidad objetiva y las leyes universales.</div>
-                        <div class="timeline-keywords">Cuantitativo • Búsqueda de verdad absoluta • Empirismo</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">Segunda Década S. XX</div>
-                        <div class="timeline-title">Neopositivismo / Positivismo Lógico</div>
-                        <div class="timeline-description">Énfasis en la verificación y el lenguaje lógico-matemático.</div>
-                        <div class="timeline-keywords">Verificación • Lenguaje lógico-matemático • Comprobación empírica</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">Mediados S. XX - Presente</div>
-                        <div class="timeline-title">Postpositivismo</div>
-                        <div class="timeline-description">Realidad probabilística y reconocimiento de la subjetividad.</div>
-                        <div class="timeline-keywords">Falsación • Mixto (cuanti-cualitativo) • Crítica al positivismo</div>
-                    </div>
-                </div>
-                
-                <!-- Interpretative Items -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">Finales S. XIX - Mediados S. XX</div>
-                        <div class="timeline-title">Interpretativo / Cualitativo</div>
-                        <div class="timeline-description">Comprensión de la realidad social y el significado.</div>
-                        <div class="timeline-keywords">Cualitativo • Verstehen • Significado e interpretación</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">S. XX Años 60-70 - Presente</div>
-                        <div class="timeline-title">Constructivismo</div>
-                        <div class="timeline-description">Realidad subjetiva y construcción social del conocimiento.</div>
-                        <div class="timeline-keywords">Construcción social • Relativismo ontológico • Cualitativo</div>
-                    </div>
-                </div>
-                
-                <!-- Critical Items -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">Mediados S. XX</div>
-                        <div class="timeline-title">Sociocrítico / Teoría Crítica</div>
-                        <div class="timeline-description">Transformación social y crítica a las estructuras de poder.</div>
-                        <div class="timeline-keywords">IAP • Emancipación • Crítica social</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">S. XX Años 90 - Presente</div>
-                        <div class="timeline-title">Paradigmas Postmodernos y Descoloniales</div>
-                        <div class="timeline-description">Deconstrucción de narrativas y pluralidad de voces.</div>
-                        <div class="timeline-keywords">Postestructuralismo • Feminismo/Queer • Descoloniales</div>
-                    </div>
-                </div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">1830 - 1840</div><div class="timeline-title">Positivismo Clásico</div><div class="timeline-description">Énfasis en la realidad objetiva y las leyes universales.</div><div class="timeline-keywords">Cuantitativo • Búsqueda de verdad absoluta • Empirismo</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">Segunda Década S. XX</div><div class="timeline-title">Neopositivismo / Positivismo Lógico</div><div class="timeline-description">Énfasis en la verificación y el lenguaje lógico-matemático.</div><div class="timeline-keywords">Verificación • Lenguaje lógico-matemático • Comprobación empírica</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">Mediados S. XX - Presente</div><div class="timeline-title">Postpositivismo</div><div class="timeline-description">Realidad probabilística y reconocimiento de la subjetividad.</div><div class="timeline-keywords">Falsación • Mixto (cuanti-cualitativo) • Crítica al positivismo</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">Finales S. XIX - Mediados S. XX</div><div class="timeline-title">Interpretativo / Cualitativo</div><div class="timeline-description">Comprensión de la realidad social y el significado.</div><div class="timeline-keywords">Cualitativo • Verstehen • Significado e interpretación</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">S. XX Años 60-70 - Presente</div><div class="timeline-title">Constructivismo</div><div class="timeline-description">Realidad subjetiva y construcción social del conocimiento.</div><div class="timeline-keywords">Construcción social • Relativismo ontológico • Cualitativo</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">Mediados S. XX</div><div class="timeline-title">Sociocrítico / Teoría Crítica</div><div class="timeline-description">Transformación social y crítica a las estructuras de poder.</div><div class="timeline-keywords">IAP • Emancipación • Crítica social</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">S. XX Años 90 - Presente</div><div class="timeline-title">Paradigmas Postmodernos y Descoloniales</div><div class="timeline-description">Deconstrucción de narrativas y pluralidad de voces.</div><div class="timeline-keywords">Postestructuralismo • Feminismo/Queer • Descoloniales</div></div></div>
             </div>
         </div>
-        
+
         <!-- Streams Section -->
         <div class="streams-section">
             <h2 class="streams-title">Las Tres Grandes Corrientes</h2>
@@ -540,11 +201,10 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Comparison Table -->
+
+        <!-- Tabla responsiva -->
         <div class="comparison-section">
             <h2 class="comparison-title">Comparación de Características Clave</h2>
-            
             <table class="comparison-table">
                 <thead>
                     <tr>
@@ -557,38 +217,38 @@
                 <tbody>
                     <tr>
                         <td><strong>Realidad</strong></td>
-                        <td>Objetiva e independiente del observador</td>
-                        <td>Subjetiva y socialmente construida</td>
-                        <td>Múltiple, relativa y contestada</td>
+                        <td data-label="Positivista">Objetiva e independiente del observador</td>
+                        <td data-label="Interpretativa">Subjetiva y socialmente construida</td>
+                        <td data-label="Crítica/Postmoderna">Múltiple, relativa y contestada</td>
                     </tr>
                     <tr>
                         <td><strong>Metodología</strong></td>
-                        <td>Cuantitativa y experimental</td>
-                        <td>Cualitativa e interpretativa</td>
-                        <td>Mixta, participativa y reflexiva</td>
+                        <td data-label="Positivista">Cuantitativa y experimental</td>
+                        <td data-label="Interpretativa">Cualitativa e interpretativa</td>
+                        <td data-label="Crítica/Postmoderna">Mixta, participativa y reflexiva</td>
                     </tr>
                     <tr>
                         <td><strong>Objetivo</strong></td>
-                        <td>Descubrir leyes universales</td>
-                        <td>Comprender significados</td>
-                        <td>Transformar y emancipar</td>
+                        <td data-label="Positivista">Descubrir leyes universales</td>
+                        <td data-label="Interpretativa">Comprender significados</td>
+                        <td data-label="Crítica/Postmoderna">Transformar y emancipar</td>
                     </tr>
                     <tr>
                         <td><strong>Rol del Investigador</strong></td>
-                        <td>Neutral y objetivo</td>
-                        <td>Reflexivo e interpretativo</td>
-                        <td>Participante y comprometido</td>
+                        <td data-label="Positivista">Neutral y objetivo</td>
+                        <td data-label="Interpretativa">Reflexivo e interpretativo</td>
+                        <td data-label="Crítica/Postmoderna">Participante y comprometido</td>
                     </tr>
                     <tr>
                         <td><strong>Validez</strong></td>
-                        <td>Verificación empírica</td>
-                        <td>Credibilidad y transferibilidad</td>
-                        <td>Autenticidad y transformación</td>
+                        <td data-label="Positivista">Verificación empírica</td>
+                        <td data-label="Interpretativa">Credibilidad y transferibilidad</td>
+                        <td data-label="Crítica/Postmoderna">Autenticidad y transformación</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <p><strong>Evolución de los Paradigmas de Investigación</strong></p>
